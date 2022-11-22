@@ -59,8 +59,7 @@ The model performs decently well across the various classes. The addition of the
 tissues, results in the majority of misclassification events (precision of complex tissue < 79%). The complex tissue
 is comprised of stroma, with tumor and immune cells. Based on the data collection, there is likely overlap in the features 
 of complex images with stroma, tumor, and immune cells. This overlap is obvious in the results, where complex tissues
-was misclassified as tumors (7/114), immune cells (14/127), and 6/100 (stroma). 
-simple stroma tissues.
+was misclassified as tumors (7/114), immune cells (14/127), and 6/100 (stroma).
 
 Here is a comparison on complex and tumor tissues from the dataset.  
 
