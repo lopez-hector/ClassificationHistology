@@ -16,16 +16,16 @@ Citation:
 Kather JN, Weis CA, Bianconi F, Melchers SM, Schad LR, Gaiser T, Marx A, Zollner F: Multi-class texture analysis in colorectal cancer histology (2016), Scientific Reports (in press)
 
 Example images:  
-![](../../../Downloads/example_tissues.png)
+![](Images/example_tissues.png)
 # Performance
 ## Custom ResNet50 Inspired
 ### Precision and Recall
-![img.png](img.png)  
+![img.png](Images/img.png)  
 where inVal is number of images in validation set, noPredicted is TP+FP, and noPredictedCorrectly is TP.
 ### Example of Misclassified Images
-![](../../../Downloads/misclassified_tissues.png)
+![](Images/misclassified_tissues.png)
 ### Confusion Matrix
-![img_1.png](img_1.png)
+![img_1.png](Images/img_1.png)
 ### Analysis
 The model performs decently well across the various classes. The addition of the complex 
 tissues, results in the majority of misclassification events (precision of complex tissue < 79%). Most importantly, 
@@ -34,5 +34,4 @@ was to be considered in practice, it would be critical to improve its recall
 of tumor tissues or, more simply, double check complex tissue classifications for possible
 tumors.  
 Here is a comparison on complex and tumor tissues from the dataset.  
-
-![](../../../Downloads/ComplexTissues.png)
+![](Images/ComplexTissues.png)
