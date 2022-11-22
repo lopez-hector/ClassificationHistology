@@ -1,4 +1,49 @@
-# test
-testing
+# Classification of Tissue Types from Colorectal Histology Images
+## Classification of 7 tissue types, including tumors
+___
 
--SECOND ADDITION
+This repo contains script for inference and classification of histology images from the following tissues:
+tumor epithelium (tumor), immune cells (lympho), mucosal glands (mucosa), simple stroma (stroma), complex stroma 
+(complex), and adipose. Details abot the data and its collections can be found in the source
+below.
+
+kaggle notebooks with exploratory data preparation and analysis are [here](https://www.kaggle.com/code/hectorlopezhernandez/colorectalhistologymodel)
+and [here](https://www.kaggle.com/code/hectorlopezhernandez/analysis-colorectaldata)
+
+# Models
+1) Small network built from residual convolutional and identity blocks.
+
+# Data
+
+Trained on kaggle dataset [here](https://www.kaggle.com/datasets/kmader/colorectal-histology-mnist).
+  
+Citation:  
+Kather JN, Weis CA, Bianconi F, Melchers SM, Schad LR, Gaiser T, Marx A, Zollner F: Multi-class texture analysis in colorectal cancer histology (2016), Scientific Reports (in press)
+
+Example images for tissues and controls:  
+![](Images/example_tissues.png)
+# Performance
+## Custom ResNet50 Inspired
+### Precision and Recall
+![img.png](Images/img.png)  
+where inVal is number of images in validation set, noPredicted is TP+FP, and noPredictedCorrectly is TP.
+### Example of Misclassified Images
+![](Images/misclassified_tissues.png)
+### Confusion Matrix
+![img_1.png](Images/img_1.png)
+### Analysis
+The model performs decently well across the various classes. Most importantly, it performs well on the
+recall of tumor tissues. Interestingly, all tumor tissues that were misclassified were classified as complex stroma, which
+contain stroma plus "single tumour cells and/or few immune cells"[Kather et al.]. ROC curves and AUC in a one vs. rest analysis
+demonstrate high performance with low FPR up to high thresholds. 
+
+![](Images/ROC curve OvR.png)
+
+If this model was to be considered in practice, it would be critical to achieve 100% recall of tumor tissues. I would
+recommend both complex and tumor tissues for further analysis, given the presence of some tumor cells in the complex stroma
+data. This classification strategy would compromise some precision to achieve 100% recall with our existing dataset 
+on tumors. 
+
+*A comparison on complex and tumor tissues from the dataset*  
+
+![](Images/ComplexTissues.png)
