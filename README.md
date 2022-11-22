@@ -46,7 +46,7 @@ recall of tumor tissues. Interestingly, all tumor tissues that were misclassifie
 contain stroma plus "single tumour cells and/or few immune cells"[Kather et al.]. ROC curves and AUC in a one vs. rest analysis
 demonstrate high performance with a steep curve and low FPR. 
 
-![](Images/ROC curve OvR.png)
+![](Images/ROCcurveOvR.png)
 
 If this model was to be considered in practice, it would be critical to achieve 100% recall of tumor tissues. I would
 recommend both complex and tumor tissues for further analysis, given the presence of some tumor cells in the complex stroma
