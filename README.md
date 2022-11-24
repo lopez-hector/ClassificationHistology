@@ -7,14 +7,6 @@ Identifying tissue types from histological images is a critical step in patholog
 kaggle notebooks with exploratory data preparation, model training, and analysis: [here](https://www.kaggle.com/code/hectorlopezhernandez/colorectalhistologymodel)
 and [here](https://www.kaggle.com/code/hectorlopezhernandez/analysis-colorectaldata)
 
-# Classification of Colorectal Histology Images
-## Classification of 7 tissue types, including tumors
-___
-
-This repo contains script to classify histology images from the following tissues:
-tumor, lympho, mucosa, stroma, complex, and adipose. It also includes two control classes: debris and empty.
-
-
 # Models
 1) Small network built from residual convolutional and identity blocks.
 
