@@ -2,7 +2,7 @@
 ## Classification of 7 tissue types, including tumors
 ___
 
-Identifying tissue types from histological images is a critical step in pathology. Computer vision techniques enable rapid and automatic classification of tissue types. This repo contains saved weights for CV model(s) and scripts for the inference and classification of histology images from the following tissues: tumor epithelium (tumor), immune cells (lympho), mucosal glands (mucosa), simple stroma (stroma), complex stroma (complex), and adipose.
+Identifying tissue types from histological images is a critical step in pathology. Computer vision techniques enable rapid and automatic classification of tissue types. This repo contains details on CV model(s) and notebooks for the inference and classification of histology images from the following tissues: tumor epithelium (tumor), immune cells (lympho), mucosal glands (mucosa), simple stroma (stroma), complex stroma (complex), and adipose.
 
 kaggle notebooks with exploratory data preparation, model training, and analysis: [here](https://www.kaggle.com/code/hectorlopezhernandez/colorectalhistologymodel)
 and [here](https://www.kaggle.com/code/hectorlopezhernandez/analysis-colorectaldata)
