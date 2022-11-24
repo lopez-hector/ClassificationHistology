@@ -2,12 +2,9 @@
 ## Classification of 7 tissue types, including tumors
 ___
 
-This repo contains script for inference and classification of histology images from the following tissues:
-tumor epithelium (tumor), immune cells (lympho), mucosal glands (mucosa), simple stroma (stroma), complex stroma 
-(complex), and adipose. Details abot the data and its collections can be found in the source
-below.
+Identifying tissue types from histological images is a critical step in pathology. Computer vision techniques enable rapid and automatic classification of tissue types. This repo contains saved weights for CV model(s) and scripts for the inference and classification of histology images from the following tissues: tumor epithelium (tumor), immune cells (lympho), mucosal glands (mucosa), simple stroma (stroma), complex stroma (complex), and adipose.
 
-kaggle notebooks with exploratory data preparation and analysis are [here](https://www.kaggle.com/code/hectorlopezhernandez/colorectalhistologymodel)
+kaggle notebooks with exploratory data preparation, model training, and analysis: [here](https://www.kaggle.com/code/hectorlopezhernandez/colorectalhistologymodel)
 and [here](https://www.kaggle.com/code/hectorlopezhernandez/analysis-colorectaldata)
 
 # Classification of Colorectal Histology Images
@@ -15,7 +12,7 @@ and [here](https://www.kaggle.com/code/hectorlopezhernandez/analysis-colorectald
 ___
 
 This repo contains script to classify histology images from the following tissues:
-tumor, lympho, mucosa, stroma, complex, and adipose.
+tumor, lympho, mucosa, stroma, complex, and adipose. It also includes two control classes: debris and empty.
 
 
 # Models
