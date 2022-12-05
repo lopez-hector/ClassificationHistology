@@ -8,7 +8,9 @@ kaggle notebooks with exploratory data preparation, model training, and analysis
 and [here](https://www.kaggle.com/code/hectorlopezhernandez/analysis-colorectaldata)
 
 # Models
-1) Small network built from residual convolutional and identity blocks.
+1) CNN built from residual convolutional and identity blocks.
+2) ViT: Vision transformer encoder model (from [huggingface](google/vit-base-patch16-224)), pretrained with supervised methods.
+3) BEiT: Vision transfomer encoder model (from [huggingface](microsoft/beit-base-patch16-224-pt22k-ft22k)) pretrained using self-supervised methods.
 
 # Data
 
@@ -20,8 +22,12 @@ Kather JN, Weis CA, Bianconi F, Melchers SM, Schad LR, Gaiser T, Marx A, Zollner
 Example images for tissues and controls:  
 
 ![](Images/example_tissues.png)
-# Performance
-## Custom ResNet50 Inspired
+
+
+# CNN Performance
+Accuracy: 91.3
+Training set: 4,000 Images
+Validation set: 1,000 Images
 ### Precision and Recall
 ![img.png](Images/img.png)  
 where inVal is number of images in validation set, noPredicted is TP+FP, and noPredictedCorrectly is TP.
@@ -34,22 +40,70 @@ The model performs decently well across the various classes. Most importantly, i
 recall of tumor tissues. Interestingly, all tumor tissues that were misclassified were classified as complex stroma, which
 contain stroma plus "single tumour cells and/or few immune cells"[Kather et al.]. ROC curves and AUC in a one vs. rest analysis
 demonstrate high performance with a steep curve and low FPR. 
-
 ![](Images/ROCcurveOvR.png)
 
+# ViT Performance
+Accuracy: 0.945
+Training set: 4,000 Images
+Validation set: 1,000 Images
+
+### Precision and Recall
+![Untitled](https://user-images.githubusercontent.com/65481379/205764572-c355880c-0ec1-4b07-9054-264f3ffac44c.png)
+where inVal is number of images in validation set, noPredicted is TP+FP, and noPredictedCorrectly is TP.
+
+### Confusion Matrix
+
+![Untitled 1](https://user-images.githubusercontent.com/65481379/205764655-89913108-920e-406d-83e6-651ee189c015.png)
+
+### Analysis
+
+The model performs decently well across the various classes. Most importantly, it performs well on the
+recall of tumor tissues. Interestingly, all tumor tissues that were misclassified were classified as complex stroma, which
+contain stroma plus "single tumour cells and/or few immune cells"[Kather et al.]. ROC curves and AUC in a one vs. rest analysis
+demonstrate high performance with a steep curve and low FPR.
+![Untitled 2](https://user-images.githubusercontent.com/65481379/205764700-728f0858-890c-4baf-87e7-c5182d83bab0.png)
+
+# BEiT Performance
+Accuracy: 0.928
+Training set: 4,000 Images
+Validation set: 1,000 Images
+
+### Precision and Recall
+
+![Untitled 3](https://user-images.githubusercontent.com/65481379/205764985-18336cb4-95d1-4213-822a-9cc8fbaa8756.png)
+
+where inVal is number of images in validation set, noPredicted is TP+FP, and noPredictedCorrectly is TP.
+
+### Confusion Matrix
+![ConfusionMatrix](https://user-images.githubusercontent.com/65481379/205765021-351ead58-28b1-4789-b7c5-7c5549965b3e.png)
+
+
+### Analysis
+
+![ROC_curve_OvR](https://user-images.githubusercontent.com/65481379/205765125-537c7bce-5135-4413-bc80-3c9a6e6137a4.png)
+
+
+# Overall Recommendations
 If this model was to be considered in practice, it would be critical to achieve 100% recall of tumor tissues. I would
 recommend both complex and tumor tissues for further analysis, given the presence of some tumor cells in the complex stroma
-data. This classification strategy would compromise some precision to achieve 100% recall with our existing dataset 
+data [Kather et al.]. This classification strategy would compromise precision to achieve 100% recall with our existing dataset 
 on tumors. 
 
-*A comparison on complex and tumor tissues from the dataset*  
+## A comparison on complex and tumor tissues from the dataset 
 
-The model performs decently well across the various classes. The addition of the complex 
-tissues, results in the majority of misclassification events (precision of complex tissue < 79%). The complex tissue
-is comprised of stroma, with tumor and immune cells. Based on the data collection, there is likely overlap in the features 
-of complex images with stroma, tumor, and immune cells. This overlap is obvious in the results, where complex tissues
-was misclassified as tumors (7/114), immune cells (14/127), and 6/100 (stroma).
+The models perform well across the various classes, with the ViT model achieving >= 90% recall across all classes. The complex 
+tissue class, resulted in the majority of misclassification events (lowest precision). Since the complex tissue
+is comprised of stroma, single tumor, and single immune cells, the models likely learn similar feature representations between the tissue classes. This overlap is obvious in the results, where the majority of False positives and false negatives for tumors fell into the complex tissue class.
 
-Here is a comparison on complex and tumor tissues from the dataset.  
+## Alternative classification based on threshold probability
+
+Multi-class classification is typically based on the argmax of the logits (or softmax) output of the models. Given that the model outputs probabilities of each class, I explored the classification of tumors based on a threshold probability on the tumor class alone (If P(tumor) > threshold -> tumor). This strategy is more aligned with the absolute necessity of identifying tumors, over classification of other tissues. Closer inpection of the ROC curves in the following figure shows the TPR reach 1 with only a moderate increase in FPR. In this applicaion, the increase in FPR would be acceptable to increase confidence in detection of all tumors.
+
+
+![image](https://user-images.githubusercontent.com/65481379/205770282-7745bbeb-9198-4f53-9ef5-4f21652494fd.png)
+
+
+
+# Comparison of Tumor Tissues and Complex Tissues
 
 ![](Images/ComplexTissues.png)
