@@ -100,6 +100,10 @@ The models perform well across the various classes, with the ViT model achieving
 tissue class, resulted in the majority of misclassification events (lowest precision). Since the complex tissue
 is comprised of stroma, single tumor, and single immune cells, the models likely learn similar feature representations between the tissue classes. This overlap is obvious in the results, where the majority of False positives and false negatives for tumors fell into the complex tissue class.
 
+### Comparison of Tumor Tissues and Complex Tissues
+
+![](Images/ComplexTissues.png)
+
 ## Alternative classification based on threshold probability
 
 Multi-class classification is typically based on the argmax of the logits (or softmax) output of the models. Given that the model outputs probabilities of each class, I explored the classification of tumors based on a threshold probability on the tumor class alone (If P(tumor) > threshold -> tumor). This strategy is more aligned with the absolute necessity of identifying tumors, over classification of other tissues. Closer inpection of the ROC curves in the following figure shows the TPR reach 1 with only a moderate increase in FPR. In this applicaion, the increase in FPR would be acceptable to increase confidence in detection of all tumors.
@@ -109,7 +113,3 @@ Multi-class classification is typically based on the argmax of the logits (or so
 
 # Example of Misclassified Images
 ![](Images/misclassified_tissues.png)
-
-# Comparison of Tumor Tissues and Complex Tissues
-
-![](Images/ComplexTissues.png)
