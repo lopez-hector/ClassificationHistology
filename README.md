@@ -38,60 +38,48 @@ While all models did well with > 90% accuracy, the transformer models performed 
 
 
 # CNN Performance
-Accuracy: 91.3
-Training set: 4,000 Images
+Accuracy: 91.3  
+Training set: 4,000 Images  
 Validation set: 1,000 Images
-### Precision and Recall
+## Precision and Recall
 ![img.png](Images/img.png)  
 where inVal is number of images in validation set, noPredicted is TP+FP, and noPredictedCorrectly is TP.
-### Example of Misclassified Images
-![](Images/misclassified_tissues.png)
-### Confusion Matrix
+
+## Confusion Matrix
 ![img_1.png](Images/img_1.png)
-### Analysis
-The model performs decently well across the various classes. Most importantly, it performs well on the
-recall of tumor tissues. Interestingly, all tumor tissues that were misclassified were classified as complex stroma, which
-contain stroma plus "single tumour cells and/or few immune cells"[Kather et al.]. ROC curves and AUC in a one vs. rest analysis
-demonstrate high performance with a steep curve and low FPR. 
+## Analysis
 ![](Images/ROCcurveOvR.png)
 
 # ViT Performance
-Accuracy: 0.945
-Training set: 4,000 Images
-Validation set: 1,000 Images
+Accuracy: 0.945  
+Training set: 4,000 Images  
+Validation set: 1,000 Images  
 
-### Precision and Recall
+## Precision and Recall
 ![Untitled](https://user-images.githubusercontent.com/65481379/205764572-c355880c-0ec1-4b07-9054-264f3ffac44c.png)
 where inVal is number of images in validation set, noPredicted is TP+FP, and noPredictedCorrectly is TP.
 
-### Confusion Matrix
-
+## Confusion Matrix
 ![Untitled 1](https://user-images.githubusercontent.com/65481379/205764655-89913108-920e-406d-83e6-651ee189c015.png)
 
-### Analysis
-
-The model performs decently well across the various classes. Most importantly, it performs well on the
-recall of tumor tissues. Interestingly, all tumor tissues that were misclassified were classified as complex stroma, which
-contain stroma plus "single tumour cells and/or few immune cells"[Kather et al.]. ROC curves and AUC in a one vs. rest analysis
-demonstrate high performance with a steep curve and low FPR.
+## Analysis
 ![Untitled 2](https://user-images.githubusercontent.com/65481379/205764700-728f0858-890c-4baf-87e7-c5182d83bab0.png)
 
 # BEiT Performance
-Accuracy: 0.928
-Training set: 4,000 Images
-Validation set: 1,000 Images
+Accuracy: 0.928  
+Training set: 4,000 Images  
+Validation set: 1,000 Images  
 
-### Precision and Recall
-
+## Precision and Recall
 ![Untitled 3](https://user-images.githubusercontent.com/65481379/205764985-18336cb4-95d1-4213-822a-9cc8fbaa8756.png)
 
 where inVal is number of images in validation set, noPredicted is TP+FP, and noPredictedCorrectly is TP.
 
-### Confusion Matrix
+## Confusion Matrix
 ![ConfusionMatrix](https://user-images.githubusercontent.com/65481379/205765021-351ead58-28b1-4789-b7c5-7c5549965b3e.png)
 
 
-### Analysis
+## Analysis
 
 ![ROC_curve_OvR](https://user-images.githubusercontent.com/65481379/205765125-537c7bce-5135-4413-bc80-3c9a6e6137a4.png)
 
@@ -115,7 +103,8 @@ Multi-class classification is typically based on the argmax of the logits (or so
 
 ![image](https://user-images.githubusercontent.com/65481379/205770282-7745bbeb-9198-4f53-9ef5-4f21652494fd.png)
 
-
+# Example of Misclassified Images
+![](Images/misclassified_tissues.png)
 
 # Comparison of Tumor Tissues and Complex Tissues
 
