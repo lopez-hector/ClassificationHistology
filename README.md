@@ -9,8 +9,13 @@ and [here](https://www.kaggle.com/code/hectorlopezhernandez/analysis-colorectald
 
 # Models
 1) CNN built from residual convolutional and identity blocks.
-2) ViT: Vision transformer encoder model (from [huggingface](google/vit-base-patch16-224)), pretrained with supervised methods.
+  - fully trained on labeled histology images alone
+2) ViT: Vision transformer encoder model (from [huggingface](google/vit-base-patch16-224))
+  - pretrained by google with supervised methods on ImageNet data
+  - transfer learning: trained new classification head on the base model
 3) BEiT: Vision transfomer encoder model (from [huggingface](microsoft/beit-base-patch16-224-pt22k-ft22k)) pretrained using self-supervised methods.
+  - pretrained by microsoft with self-supervised sample-contrastive methods on ImageNet data. (learns image representations without labeled data)
+  - transfer learning: trained new classification head on the base model
 
 # Data
 
@@ -22,6 +27,14 @@ Kather JN, Weis CA, Bianconi F, Melchers SM, Schad LR, Gaiser T, Marx A, Zollner
 Example images for tissues and controls:  
 
 ![](Images/example_tissues.png)
+
+# Overall Comparison
+ViT was the best performing model with only 4 epochs of supervised fine-tuning on 4,000 labeled histology images. BEiT came in close second but require 8 epochs of fine-tuning to achieve similar performance. 
+
+## ROC Curve Comparison
+While all models did well with > 90% accuracy, the transformer models performed slighlty better as classifiers. The recall of tumor tissues is the most important metric in this dataset. ViT achieved  96% recall for the tumor tissue class.
+
+<img width="1600" alt="ModelComparisionROC" src="https://user-images.githubusercontent.com/65481379/205772531-d6b9ccd2-cf08-4b45-9a5a-adc144f19c76.png">
 
 
 # CNN Performance
