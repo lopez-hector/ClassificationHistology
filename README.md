@@ -30,7 +30,10 @@ Example images for tissues and controls:
 ![](Images/example_tissues.png)
 
 # Overall Comparison
-ViT was the best performing model with only 4 epochs of supervised fine-tuning on 4,000 labeled histology images. BEiT came in close second but require 8 epochs of fine-tuning to achieve similar performance. 
+ViT was the best performing model with only 4 epochs of supervised fine-tuning on 4,000 labeled histology images. BEiT came in close second but required 8 epochs of fine-tuning to achieve a competitive performance. 
+
+![Untitled](https://user-images.githubusercontent.com/65481379/206043074-614cf3e6-92df-4eb1-b6f7-ad6208a9c100.png)
+
 
 ## ROC Curve Comparison
 While all models did well with > 90% accuracy, the transformer models performed slighlty better as classifiers. The recall of tumor tissues is the most important metric in this dataset. ViT achieved  96% recall for the tumor tissue class.
