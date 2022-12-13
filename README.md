@@ -111,3 +111,32 @@ Multi-class classification is typically based on the argmax of the logits (or so
 
 # Example of Misclassified Images
 ![](Images/misclassified_tissues.png)
+
+# Saliency Maps
+Using the grad-cam approach [(here)](https://arxiv.org/abs/1610.02391?source=post_page---------------------------) I invesitigate the areas on which the CNN architecture was focusing on in the histology images. The interpretation of the CNN's focus is challenging for the complex tissues without being a trained pathologist. However, clear patterns do emerge in the saliency maps for some of the tissues. For 1) stromal tissue images, the maps pick up on the anisotropy of the tissue, 2) complex images, the maps pick up on the dense dark clusters and the anisotropy in the stromal tissues, 3) adipose tissues, the maps pick up on the faint streaks present in the image, and 4) empty control samples, the maps pick up on the uniform distribution in the absence of an object in the image.
+
+## Example Saliency Maps 
+Images including 10 images per class in images directory.
+### Tumor
+![Tumor_SM](https://user-images.githubusercontent.com/65481379/207451602-3ec7a539-9e84-4057-9738-b9a92216f069.png)
+### Adipose
+![Adipose_SM](https://user-images.githubusercontent.com/65481379/207451577-d08a5da0-4dc5-41a8-bca8-fad5dd8ebec0.png)
+### Complex
+![Complex_SM](https://user-images.githubusercontent.com/65481379/207451584-91288bd3-13e5-4317-8a3e-e145672983e3.png)
+### Lympho
+![Lympho_SM](https://user-images.githubusercontent.com/65481379/207451592-15b6cea1-dfad-4245-9184-483ba3054bd6.png)
+### Mucosa
+![Mucosa_SM](https://user-images.githubusercontent.com/65481379/207451598-e2a46239-6915-489f-a751-e52f9fd56fa2.png)
+### Stroma
+![Stroma_SM](https://user-images.githubusercontent.com/65481379/207451601-4a19b88a-bca9-4f33-a95d-e030c9f6dd37.png)
+### Debris
+![Debris_SM](https://user-images.githubusercontent.com/65481379/207451586-f783f94f-b7e6-4489-a627-14892c842066.png)
+### Empty
+![Empty_SM](https://user-images.githubusercontent.com/65481379/207451591-9eab5548-f2f9-4fdf-bd90-90048dfe0e10.png)
+
+## Analysis of Weighted Activations
+The weighted gradients from the Grad-CAM process were scaled to a range of 0 - 255. The histograms for each sample in the validation set were calculated and then averaged, providing a mean histogram that describes the distribution of the normalized gradients per class. Although, this process loses topological information about the gradients there remains a clear distribution of the gradient, unique to each class. Classes with histogram distributions that have high mean values or are right skewed are dominated by gradient values with values close to the max gradient, indicating a high degree of activation. The inverse for left-skewed distribution is dominated by gradient values close to the minimum gradient. 
+
+### Histograms Across Class
+The following images shows (left) an example histogram from **ONE** sample in the validation set and (right) the mean (N>100) histogram per class.
+![ClassComparisons_Histograms](https://user-images.githubusercontent.com/65481379/207453387-35d2db8d-1302-4be8-874f-ef38adc0f9b8.png)
