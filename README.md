@@ -2,9 +2,9 @@
 ## Classification, Saliency Maps, and Gradient Distributions of 7 tissue types, including tumors
 Identifying tissue types from histological images is a critical step in pathology. Computer vision techniques enable rapid and automatic classification of tissue types. This repo contains details on CV model(s) and notebooks for the inference and classification of histology images from the following tissues: tumor epithelium (tumor), immune cells (lympho), mucosal glands (mucosa), simple stroma (stroma), complex stroma (complex), and adipose.
 
-notebooks with exploratory data preparation, model training, and analysis:  
-CNN: [here](https://www.kaggle.com/code/hectorlopezhernandez/colorectalhistologymodel) and [here](https://www.kaggle.com/code/hectorlopezhernandez/analysis-colorectaldata)  
+notebooks with exploratory data preparation, model training, and analysis:
 Transformers: [here](https://colab.research.google.com/drive/1bQk-LHVE9YFDPCjuYHJF-zSOf1aw38hq?usp=sharing)
+CNN: [here](https://www.kaggle.com/code/hectorlopezhernandez/colorectalhistologymodel) and [here](https://www.kaggle.com/code/hectorlopezhernandez/analysis-colorectaldata)  
 
 # Models
 1) CNN built from residual convolutional and identity blocks.
