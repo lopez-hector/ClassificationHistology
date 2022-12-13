@@ -44,7 +44,7 @@ The distribution of the weighted gradients for each unique class was explored. U
 ![Tumor_MeanHistogram](https://user-images.githubusercontent.com/65481379/207458814-1e787c17-c575-42dc-93bc-8e21ab770d8f.png)
 
 ## ROC Curve Comparison
-While all models did well with > 90% accuracy, the transformer models performed slighlty better as classifiers. The recall of tumor tissues is the most important metric in this dataset. ViT achieved  96% recall for the tumor tissue class.
+While all models did well with > 90% accuracy, the transformer models performed slightly better as classifiers. The recall of tumor tissues is the most important metric in this dataset. ViT achieved  96% recall for the tumor tissue class.
 
 <img width="1600" alt="ModelComparisionROC" src="https://user-images.githubusercontent.com/65481379/205772531-d6b9ccd2-cf08-4b45-9a5a-adc144f19c76.png">
 
