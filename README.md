@@ -117,6 +117,9 @@ Using the grad-cam approach [(here)](https://arxiv.org/abs/1610.02391?source=pos
 
 ## Example Saliency Maps 
 Images including 10 images per class in images directory.
+**Left:** Histology Image
+**Middle:** Grad-CAM
+**Right:** Overlap
 ### Tumor
 ![Tumor_SM](https://user-images.githubusercontent.com/65481379/207451602-3ec7a539-9e84-4057-9738-b9a92216f069.png)
 ### Adipose
