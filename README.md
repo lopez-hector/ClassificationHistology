@@ -142,4 +142,5 @@ The weighted gradients from the Grad-CAM process were scaled to a range of 0 - 2
 
 ### Histograms Across Class
 The following images shows (left) an example histogram from **ONE** sample in the validation set and (right) the mean (N>100) histogram per class.
-![ClassComparisons_Histograms](https://user-images.githubusercontent.com/65481379/207453387-35d2db8d-1302-4be8-874f-ef38adc0f9b8.png)
+![ClassComparisons_Histograms](https://user-images.githubusercontent.com/65481379/207457013-a51185b0-3e04-4c04-9977-cc4ae90120c3.png)
+
