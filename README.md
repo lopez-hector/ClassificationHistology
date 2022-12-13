@@ -1,5 +1,5 @@
 # Classification of Tissue Types from Colorectal Histology Images
-## Classification of 7 tissue types, including tumors
+## Classification, Saliency Maps, and Gradient Distributions of 7 tissue types, including tumors
 Identifying tissue types from histological images is a critical step in pathology. Computer vision techniques enable rapid and automatic classification of tissue types. This repo contains details on CV model(s) and notebooks for the inference and classification of histology images from the following tissues: tumor epithelium (tumor), immune cells (lympho), mucosal glands (mucosa), simple stroma (stroma), complex stroma (complex), and adipose.
 
 notebooks with exploratory data preparation, model training, and analysis:  
@@ -27,11 +27,21 @@ Example images for tissues and controls:
 
 ![](Images/example_tissues.png)
 
-# Overall Comparison
+# Summary
+## Model Comparison
 ViT was the best performing model with only 4 epochs of supervised fine-tuning on 4,000 labeled histology images. BEiT came in close second but required 8 epochs of fine-tuning to achieve a competitive performance. 
 
 ![Untitled](https://user-images.githubusercontent.com/65481379/206043074-614cf3e6-92df-4eb1-b6f7-ad6208a9c100.png)
 
+## Saliency Maps
+Using the Grad-CAM method, coarse localization maps of the important regions in the histological images were identified.
+**Example Saliency Map for the Tumor Class**
+![Tumor_SM](https://user-images.githubusercontent.com/65481379/207458265-6f31a730-6d71-45e0-aa9e-e8383a61edf7.png)
+
+## Weighted Gradients Distribution
+The distribution of the weighted gradients for each unique class was explored, showing unique distrutions in weighted gradient magnitudes despite the absence of topological information in a flattened representation.
+**Example Histogram for the Tumor Class**
+![Tumor_MeanHistogram](https://user-images.githubusercontent.com/65481379/207458814-1e787c17-c575-42dc-93bc-8e21ab770d8f.png)
 
 ## ROC Curve Comparison
 While all models did well with > 90% accuracy, the transformer models performed slighlty better as classifiers. The recall of tumor tissues is the most important metric in this dataset. ViT achieved  96% recall for the tumor tissue class.
