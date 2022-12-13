@@ -40,7 +40,7 @@ Using the Grad-CAM method, coarse localization maps of the important regions in 
 
 ## Weighted Gradients Distribution
 The distribution of the weighted gradients for each unique class was explored. Unique distrutions in the normalized weighted gradient magnitudes were discovered, despite the absence of topological information in a flattened representation.  
-**Example Histogram for the Tumor Class (counts vs. bin)**
+**Example Histogram for the Tumor Class (counts vs. bin)**   
 ![Tumor_MeanHistogram](https://user-images.githubusercontent.com/65481379/207458814-1e787c17-c575-42dc-93bc-8e21ab770d8f.png)
 
 ## ROC Curve Comparison
