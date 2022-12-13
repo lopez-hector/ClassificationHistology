@@ -2,8 +2,8 @@
 ## Classification, Saliency Maps, and Gradient Distributions of 7 tissue types, including tumors
 Identifying tissue types from histological images is a critical step in pathology. Computer vision techniques enable rapid and automatic classification of tissue types. This repo contains details on CV model(s) and notebooks for the inference and classification of histology images from the following tissues: tumor epithelium (tumor), immune cells (lympho), mucosal glands (mucosa), simple stroma (stroma), complex stroma (complex), and adipose.
 
-notebooks with exploratory data preparation, model training, and analysis:
-Transformers: [here](https://colab.research.google.com/drive/1bQk-LHVE9YFDPCjuYHJF-zSOf1aw38hq?usp=sharing)
+notebooks with exploratory data preparation, model training, and analysis:  
+Transformers: [here](https://colab.research.google.com/drive/1bQk-LHVE9YFDPCjuYHJF-zSOf1aw38hq?usp=sharing).  
 CNN: [here](https://www.kaggle.com/code/hectorlopezhernandez/colorectalhistologymodel) and [here](https://www.kaggle.com/code/hectorlopezhernandez/analysis-colorectaldata)  
 
 # Models
@@ -34,13 +34,13 @@ ViT was the best performing model with only 4 epochs of supervised fine-tuning o
 ![Untitled](https://user-images.githubusercontent.com/65481379/206043074-614cf3e6-92df-4eb1-b6f7-ad6208a9c100.png)
 
 ## Saliency Maps
-Using the Grad-CAM method, coarse localization maps of the important regions in the histological images were identified.
+Using the Grad-CAM method, coarse localization maps of the important regions in the histological images were identified.  
 **Example Saliency Map for the Tumor Class**
 ![Tumor_SM](https://user-images.githubusercontent.com/65481379/207458265-6f31a730-6d71-45e0-aa9e-e8383a61edf7.png)
 
 ## Weighted Gradients Distribution
-The distribution of the weighted gradients for each unique class was explored, showing unique distrutions in weighted gradient magnitudes despite the absence of topological information in a flattened representation.
-**Example Histogram for the Tumor Class**
+The distribution of the weighted gradients for each unique class was explored. Unique distrutions in the normalized weighted gradient magnitudes were discovered, despite the absence of topological information in a flattened representation.  
+**Example Histogram for the Tumor Class (counts vs. bin)**
 ![Tumor_MeanHistogram](https://user-images.githubusercontent.com/65481379/207458814-1e787c17-c575-42dc-93bc-8e21ab770d8f.png)
 
 ## ROC Curve Comparison
