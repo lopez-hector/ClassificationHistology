@@ -1,4 +1,4 @@
-# Classification of Tissue Types from Colorectal Histology Images
+# Analysis Colorectal Histology Images: Classification and Saliency Maps
 ## Classification, Saliency Maps, and Gradient Distributions of 7 tissue types, including tumors
 Identifying tissue types from histological images is a critical step in pathology. Computer vision techniques enable rapid and automatic classification of tissue types. This repo contains details on CV model(s) and notebooks for the inference and classification of histology images from the following tissues: tumor epithelium (tumor), immune cells (lympho), mucosal glands (mucosa), simple stroma (stroma), complex stroma (complex), and adipose.
 
